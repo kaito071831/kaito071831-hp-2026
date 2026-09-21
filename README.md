@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# kaito071831 プロフィールサイト
+
+Kaito071831の個人プロフィールサイトです。Next.js(App Router)+ TypeScript + Tailwind CSS で構築した、オフホワイト背景×グラスモーフィズムの1ページ構成サイトです。
 
 ## Getting Started
 
-First, run the development server:
+依存パッケージをインストールしてから開発サーバーを起動します。
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000) をブラウザで開くと確認できます。`src/app/page.tsx` を編集すると自動的に反映されます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## スクリプト
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev     # 開発サーバー起動
+npm run build   # 本番ビルド
+npm run start   # 本番ビルドの起動
+npm run lint    # ESLint
+```
 
-## Learn More
+## プロジェクト構成
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/
+    layout.tsx      # 全体レイアウト、フォント読み込み(Google Fonts)、メタデータ
+    page.tsx         # ページ本体(セクションの組み立て)
+    globals.css       # デザイントークン・全コンポーネントのスタイル
+  components/
+    ProfileCard.tsx   # 左側のプロフィールカード(写真・自己紹介・連絡先)
+    SkillsPanel.tsx    # スキル/技術スタック
+    CareerPanel.tsx     # 経歴
+    AwardsPanel.tsx      # 受賞歴
+    BackgroundDecor.tsx  # 背景装飾(グラデーションオーブ・グリッド・ノイズ)
+    Footer.tsx            # フッター(ライブ時計)
+    LiveClock.tsx          # JSTのライブ時計(クライアントコンポーネント)
+  lib/
+    profile-data.ts        # 掲載内容(プロフィール・スキル・経歴・受賞歴)のデータ
+public/
+  images/profile.jpg       # プロフィール写真
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 掲載内容を編集する
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+名前・経歴・スキル・受賞歴・連絡先など、サイトに表示される情報はすべて `src/lib/profile-data.ts` にまとまっています。内容を変更したい場合はこのファイルを編集してください。プロフィール写真を差し替える場合は `public/images/profile.jpg` を置き換え、必要に応じて `profile-data.ts` の `avatar` パスも更新してください。
 
-## Deploy on Vercel
+## デザイン
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+配色・タイポグラフィ・グラスパネルなどのスタイルは `src/app/globals.css` にまとめています。フォントは Space Grotesk / Zen Kaku Gothic New / IBM Plex Mono を Google Fonts から読み込んでいます(`src/app/layout.tsx`)。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
