@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "酒尾快都",
-  description: "酒尾快都(SAKAO KAITO)のプロフィールサイト。バックエンドエンジニア・広報として活動しています。",
+  title: "kaito071831.com",
+  description: "Kaito SAKAO(とーくん)のプロフィールサイト。バックエンドエンジニア・広報として活動しています。",
   openGraph: {
-    title: "酒尾快都",
-    description: "酒尾快都(SAKAO KAITO)のプロフィールサイト。バックエンドエンジニア・広報として活動しています。",
+    title: "kaito071831.com",
+    description: "Kaito SAKAO(とーくん)のプロフィールサイト。バックエンドエンジニア・広報として活動しています。",
     type: "website",
   },
 };

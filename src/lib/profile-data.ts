@@ -7,6 +7,7 @@ export const profile = {
   email: "k_sakao@kaito071831.com",
   x: { handle: "@kaito071831", url: "https://x.com/kaito071831" },
   github: { handle: "kaito071831", url: "https://github.com/kaito071831" },
+  qiita: { handle: "kaito071831", url: "https://qiita.com/kaito071831" },
   avatar: "/images/profile.jpg",
 };
 
@@ -44,5 +45,5 @@ export const career: { period: string; role: string; org: string; note: string }
 ];
 
 export const awards: { year: string; title: string; org: string }[] = [
-  { year: "2025", title: "Japan AWS Jr. Champion", org: "Amazon Web Services Japan" },
+  { year: "2025", title: "2025 Japan AWS Jr. Champion", org: "Amazon Web Services Japan" },
 ];
